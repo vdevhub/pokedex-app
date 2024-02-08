@@ -1,3 +1,5 @@
+// Initializing the Pokemon list
+
 let pokemonList = [];
 
 pokemonList = [
@@ -39,3 +41,20 @@ pokemonList = [
 ];
 
 console.log(pokemonList);
+
+// Loop through the pokemonList and print pokemons' name and height
+// Each pokemon is in a separate paragraph
+// If a pokemon is higher than 1.5 meters, add a flag
+
+let pokemonDescription = '';
+let bigPokemonTag = ' - <b>Wow, that’s big!</b>';
+
+for (let i = 0; i < pokemonList.length; i++) {
+  pokemonDescription = pokemonList[i].name + ' (Height: ' + pokemonList[i].height + ', Weight: ' + pokemonList[i].weight + ')';
+  if (pokemonList[i].height > 1.5) {
+    pokemonDescription = pokemonDescription + bigPokemonTag;
+  }
+  pokemonDescription = '<p>' + pokemonDescription + '</p>';
+  console.log(pokemonDescription);
+  document.write(pokemonDescription);
+}
