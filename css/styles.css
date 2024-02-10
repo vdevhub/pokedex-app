@@ -16,6 +16,7 @@ the padding and the border.
 
 body {
   font-family: 'Poppins', sans-serif;
+  color: #fff;
   background: rgb(103,111,157);
   background: linear-gradient(151deg, rgba(103,111,157,1) 10%, rgba(66,71,105,1) 49%, rgba(45,50,80,1) 97%);
 }
