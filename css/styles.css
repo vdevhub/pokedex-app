@@ -1,9 +1,9 @@
 /* 
  * Basic white: #fff;
- * Light grey blue: #676fgd;
+ * Light grey blue: #676f9d;
  * Medium grey blue: #424769;
  * Dark grey blue: #2d3250;
- * Light appricot: #fgb17a;
+ * Light appricot: #f9b17a;
  */
 
 /*
@@ -16,6 +16,8 @@ the padding and the border.
 
 body {
   font-family: 'Poppins', sans-serif;
+  background: rgb(103,111,157);
+  background: linear-gradient(151deg, rgba(103,111,157,1) 10%, rgba(66,71,105,1) 49%, rgba(45,50,80,1) 97%);
 }
 
 h1, h2, h3 {
@@ -23,7 +25,15 @@ h1, h2, h3 {
 }
 
 main {
-  padding: 150px 0;
+  padding: 200px 0;
+  margin: 0 auto;
+  width: 70%;
+  text-align: center;
+  background-color: #f9b17a;
+}
+
+.box-shadow {
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
 }
 
 /*
@@ -68,9 +78,33 @@ Navigation list styling.
 
 .navigation-list a {
   text-decoration: none;
+  color: #fff;
   font-size: 22px;
 }
 
 .navigation-list__item--active {
   font-weight: 700;
+}
+
+/*
+Link and link states styling.
+*/
+a {
+  color: #fff;
+  transition: opacity var(--transition-std-time);
+}
+
+a:visited {
+  color: #f9b17a;
+}
+
+a:hover,
+a:focus {
+  text-decoration: none;
+  cursor: pointer;
+  opacity: 0.8;
+}
+
+a:active {
+  color: lightcoral;
 }
