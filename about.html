@@ -1,10 +1,12 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>About</title>
   <link rel="shortcut icon" type="image/x-icon" href="img/pokedex-favicon.ico">
+  <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.min.css" integrity="sha512-NhSC1YmyruXifcj/KFRWoC561YpHpc5Jtzgvbuzx5VozKpWvQ+4nXhPdFgmx8xqexRcpAglTj9sIBWINXa8x5w==" crossorigin="anonymous" referrerpolicy="no-referrer">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link
@@ -12,22 +14,26 @@
     rel="stylesheet">
   <link rel="stylesheet" type="text/css" href="css/styles.css">
 </head>
+
 <body>
-  <header>
-    <a>
-      <img src="img/pokedex-logo.svg" alt="Pokedex Logo">
+  <header class="page-header">
+    <a class="page-header__item" href="index.html">
+      <img class="page-header__item-logo" src="img/pokedex-logo.svg" alt="Pokedex Logo">
     </a>
-    <ul role="menubar">
-      <li role="presentation">
-        <a href="index.html" role="menuitem">Home</a>
-      </li>
-      <li role="presentation">
-        <a href="about.html" role="menuitem">About</a>
-      </li>
-    </ul>
+    <nav class="page-header__item">
+      <ul role="menubar" class="navigation-list">
+        <li role="presentation">
+          <a href="index.html" role="menuitem" class="navigation-list__item">Home</a>
+        </li>
+        <li role="presentation">
+          <a href="about.html" role="menuitem" class="navigation-list__item navigation-list__item--active">About</a>
+        </li>
+      </ul>
+    </nav>
   </header>
   <main>
-
+    <div>About section</div>
   </main>
 </body>
+
 </html>

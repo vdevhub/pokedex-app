@@ -6,10 +6,71 @@
  * Light appricot: #fgb17a;
  */
 
+/*
+Setting the default width of all elements to include
+the padding and the border.
+*/
+* {
+  box-sizing: border-box;
+}
+
 body {
   font-family: 'Poppins', sans-serif;
 }
 
 h1, h2, h3 {
   font-family: 'Playfair Display', serif;
+}
+
+main {
+  padding: 150px 0;
+}
+
+/*
+Page header styling, flexbox.
+*/
+.page-header {
+  display: flex;
+  width: 100%;
+  padding: 20px 60px;
+  margin-bottom: 60px;
+  background-color: #2d3250;
+  
+  /* border-bottom: 4px solid var(--primary-color); */
+  position: fixed;
+  align-items: center;
+}
+ 
+.page-header__item {
+  flex: 0 1 70px;
+}
+
+.page-header__item:last-child {
+  flex-grow: 1;
+  text-align: right;
+}
+
+.page-header__item-logo {
+  width: 100%;
+}
+
+/*
+Navigation list styling.
+*/
+.navigation-list {
+  list-style-type: none;
+}
+
+.navigation-list li {
+  display: inline-block;
+  margin-left: 15px;
+}
+
+.navigation-list a {
+  text-decoration: none;
+  font-size: 22px;
+}
+
+.navigation-list__item--active {
+  font-weight: 700;
 }
