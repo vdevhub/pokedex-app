@@ -17,14 +17,14 @@ the padding and the border.
 }
 
 body {
-  font-family: 'Poppins', sans-serif;
+  font-family: 'Inter', sans-serif;
   font-size: 18px;
   background: rgb(103,111,157);
   background: linear-gradient(151deg, rgba(103,111,157,1) 10%, rgba(66,71,105,1) 49%, rgba(45,50,80,1) 97%);
 }
 
 h1, h2, h3 {
-  font-family: 'Playfair Display', serif;
+  font-family: 'Expletus Sans', sans-serif;
 }
 
 main {
