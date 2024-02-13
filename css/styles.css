@@ -3,7 +3,9 @@
  * Light grey blue: #676f9d;
  * Medium grey blue: #424769;
  * Dark grey blue: #2d3250;
- * Light appricot: #f9b17a;
+ * Light appricot: #f9b17a; 
+ * Light coral: #f08080;
+ * Golden ellow: #ffc438;
  */
 
 /*
@@ -16,7 +18,7 @@ the padding and the border.
 
 body {
   font-family: 'Poppins', sans-serif;
-  color: #fff;
+  font-size: 18px;
   background: rgb(103,111,157);
   background: linear-gradient(151deg, rgba(103,111,157,1) 10%, rgba(66,71,105,1) 49%, rgba(45,50,80,1) 97%);
 }
@@ -30,7 +32,7 @@ main {
   margin: 0 auto;
   width: 70%;
   text-align: center;
-  background-color: #f9b17a;
+  background-color: #ffc438;
 }
 
 .box-shadow {
@@ -96,7 +98,7 @@ a {
 }
 
 a:visited {
-  color: #f9b17a;
+  color: #ffc438;
 }
 
 a:hover,
@@ -107,5 +109,5 @@ a:focus {
 }
 
 a:active {
-  color: lightcoral;
+  color: #f9b17a;
 }
