@@ -62,9 +62,14 @@ let pokemonRepository = (function () {
     return pokemonList;
   }
 
+  function getPokemonByName(searchedName) {
+    return pokemonList.filter((pokemon) => pokemon.name.toLowerCase() === searchedName.toLowerCase());
+  }
+
   return {
     add: add,
-    getAll: getAll
+    getAll: getAll,
+    getPokemonByName: getPokemonByName
   };
 })();
 
@@ -78,6 +83,9 @@ pokemonRepository.add({
   type: ['grass', 'poison'],
   category: 'seed'
 });
+
+//Testing pokemon search
+console.log(pokemonRepository.getPokemonByName('ivysaur'));
 
 // Loop through the pokemonList and print pokemons' name and height
 // Each pokemon is in a separate paragraph
