@@ -1,6 +1,7 @@
 // Initializing the Pokemon list
 let pokemonRepository = (function () {
   let pokemonList = [];
+  let expectedKeys = ['name', 'height', 'weight', 'type', 'category'];
 
   pokemonList = [
     {
@@ -40,8 +41,6 @@ let pokemonRepository = (function () {
     }
   ];
 
-  let expectedKeys = ['name', 'height', 'weight', 'type', 'category'];
-
   function add(pokemon) {
     if (typeof(pokemon) === 'object'){
       let keysToAdd = Object.keys(pokemon);
@@ -58,6 +57,16 @@ let pokemonRepository = (function () {
     }
   }
 
+  function addListItem(pokemon) {
+    let pokemonList = document.querySelector('.pokemon-list');
+    let pokemonListItem = document.createElement('li');
+    let pokemonButton = document.createElement('button');
+    pokemonButton.innerText = pokemon.name;
+    pokemonButton.classList.add('pokemon-button');
+    pokemonListItem.appendChild(pokemonButton);
+    pokemonList.appendChild(pokemonListItem);
+  }
+
   function getAll() {
     return pokemonList;
   }
@@ -68,6 +77,7 @@ let pokemonRepository = (function () {
 
   return {
     add: add,
+    addListItem: addListItem,
     getAll: getAll,
     getPokemonByName: getPokemonByName
   };
@@ -75,31 +85,10 @@ let pokemonRepository = (function () {
 
 console.log(pokemonRepository.getAll());
 
-// Testing pokemon addition
-pokemonRepository.add({
-  name: 'Kikiki',
-  height: 0.7,
-  weight: 6.9,
-  type: ['grass', 'poison'],
-  category: 'seed'
-});
-
 //Testing pokemon search
 console.log(pokemonRepository.getPokemonByName('ivysaur'));
 
-// Loop through the pokemonList and print pokemons' name and height
-// Each pokemon is in a separate paragraph
-// If a pokemon is higher than 1.5 meters, add a flag
-
-let pokemonDescription = '';
-let bigPokemonTag = ' - <b>Wow, that’s big!</b>';
-
+// Loop through the pokemonList and create Pokemon buttons
 pokemonRepository.getAll().forEach(function (pokemon) {
-  pokemonDescription = pokemon.name + ' (Height: ' + pokemon.height + ', Weight: ' + pokemon.weight + ')';
-  if (pokemon.height > 1.5) {
-    pokemonDescription = pokemonDescription + bigPokemonTag;
-  }
-  pokemonDescription = '<p>' + pokemonDescription + '</p>';
-  console.log(pokemonDescription);
-  document.write(pokemonDescription);
+  pokemonRepository.addListItem(pokemon);
 });
