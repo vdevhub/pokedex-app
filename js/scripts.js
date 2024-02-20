@@ -60,11 +60,23 @@ let pokemonRepository = (function () {
   function addListItem(pokemon) {
     let pokemonList = document.querySelector('.pokemon-list');
     let pokemonListItem = document.createElement('li');
+
     let pokemonButton = document.createElement('button');
     pokemonButton.innerText = pokemon.name;
     pokemonButton.classList.add('pokemon-button');
+
     pokemonListItem.appendChild(pokemonButton);
     pokemonList.appendChild(pokemonListItem);
+
+    addButtonListener(pokemonButton, pokemon);
+  }
+
+  function addButtonListener(button, pokemon) {
+    button.addEventListener('click', function () {showDetails(pokemon)});
+  }
+
+  function showDetails(pokemon) {
+    console.log(pokemon.name);
   }
 
   function getAll() {
