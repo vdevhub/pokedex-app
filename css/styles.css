@@ -102,7 +102,9 @@ a:visited {
 }
 
 a:hover,
-a:focus {
+a:focus,
+button:hover,
+button:focus {
   text-decoration: none;
   cursor: pointer;
   opacity: 0.8;
