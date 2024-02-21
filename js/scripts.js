@@ -1,8 +1,10 @@
 // Initializing the Pokemon list
+// Wrapped in IIFE with exposed functions
 let pokemonRepository = (function () {
   let pokemonList = [];
   let expectedKeys = ['name', 'height', 'weight', 'type', 'category'];
 
+  //List of Pokemon's, init static
   pokemonList = [
     {
       name: 'Bulbasaur',
@@ -41,6 +43,7 @@ let pokemonRepository = (function () {
     }
   ];
 
+  //Adds a new Pokemon if it's an Object and has all required keys
   function add(pokemon) {
     if (typeof(pokemon) === 'object'){
       let keysToAdd = Object.keys(pokemon);
@@ -57,6 +60,7 @@ let pokemonRepository = (function () {
     }
   }
 
+  //Adds a Pokemon as a list item (button) in the page
   function addListItem(pokemon) {
     let pokemonList = document.querySelector('.pokemon-list');
     let pokemonListItem = document.createElement('li');
@@ -71,18 +75,22 @@ let pokemonRepository = (function () {
     addButtonListener(pokemonButton, pokemon);
   }
 
+  //Adds an Event Listener in a button
   function addButtonListener(button, pokemon) {
     button.addEventListener('click', function () {showDetails(pokemon)});
   }
 
+  //Shows a Pokemon's details
   function showDetails(pokemon) {
     console.log(pokemon.name);
   }
 
+  //Gets all stored Pokemons
   function getAll() {
     return pokemonList;
   }
 
+  //Finds a Pokemon by its name
   function getPokemonByName(searchedName) {
     return pokemonList.filter((pokemon) => pokemon.name.toLowerCase() === searchedName.toLowerCase());
   }
@@ -95,12 +103,8 @@ let pokemonRepository = (function () {
   };
 })();
 
-console.log(pokemonRepository.getAll());
-
-//Testing pokemon search
-console.log(pokemonRepository.getPokemonByName('ivysaur'));
-
-// Loop through the pokemonList and create Pokemon buttons
+// Loop through the pokemonList and 
+// create Pokemon buttons on the page
 pokemonRepository.getAll().forEach(function (pokemon) {
   pokemonRepository.addListItem(pokemon);
 });
