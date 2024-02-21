@@ -19,8 +19,8 @@ the padding and the border.
 body {
   font-family: 'Inter', sans-serif;
   font-size: 18px;
-  background: rgb(103,111,157);
-  background: linear-gradient(151deg, rgba(103,111,157,1) 10%, rgba(66,71,105,1) 49%, rgba(45,50,80,1) 97%);
+  background: rgb(103, 111, 157);
+  background: linear-gradient(151deg, rgba(103, 111, 157, 1) 10%, rgba(66, 71, 105, 1) 49%, rgba(45, 50, 80, 1) 97%);
 }
 
 /*
@@ -34,7 +34,9 @@ main {
   background-color: #ffc438;
 }
 
-h1, h2, h3 {
+h1,
+h2,
+h3 {
   font-family: 'Expletus Sans', sans-serif;
   font-weight: 700;
 }
@@ -115,7 +117,7 @@ Page header styling, flexbox.
   position: fixed;
   align-items: center;
 }
- 
+
 .page-header__item {
   flex: 0 1 70px;
 }
@@ -181,11 +183,11 @@ Responsive design rules.
   h1 {
     font-size: 28px;
   }
-  
+
   h2 {
     font-size: 22px;
   }
-  
+
   h3 {
     font-size: 18px;
   }
