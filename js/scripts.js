@@ -1,5 +1,6 @@
-// Initializing the Pokemon list
-// Wrapped in IIFE with exposed functions
+
+//Initializing the Pokemon list
+//Wrapped in IIFE with exposed functions
 let pokemonRepository = (function () {
   let pokemonList = [];
   let expectedKeys = ['name', 'height', 'weight', 'type', 'category'];
@@ -80,7 +81,7 @@ let pokemonRepository = (function () {
     button.addEventListener('click', function () {showDetails(pokemon)});
   }
 
-  //Shows a Pokemon's details
+  //Shows Pokemon details
   function showDetails(pokemon) {
     console.log(pokemon.name);
   }
