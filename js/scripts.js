@@ -3,46 +3,77 @@
 //Wrapped in IIFE with exposed functions
 let pokemonRepository = (function () {
   let pokemonList = [];
-  let expectedKeys = ['name', 'height', 'weight', 'type', 'category'];
+  let expectedKeys = ['name', 'detailsUrl'];
+  let apiUrl = 'https://pokeapi.co/api/v2/pokemon/?limit=150';
 
   //List of Pokemon's, init static
-  pokemonList = [
-    {
-      name: 'Bulbasaur',
-      height: 0.7,
-      weight: 6.9,
-      type: ['grass', 'poison'],
-      category: 'seed'
-    },
-    {
-      name: 'Ivysaur',
-      height: 1,
-      weight: 13,
-      type: ['grass', 'poison'],
-      category: 'seed'
-    },
-    {
-      name: 'Venusaur',
-      height: 2,
-      weight: 100,
-      type: ['grass', 'poison'],
-      category: 'seed'
-    },
-    {
-      name: 'Charmander',
-      height: 0.6,
-      weight: 8.5,
-      type: ['fire'],
-      category: 'lizard'
-    },
-    {
-      name: 'Charmeleon',
-      height: 1.1,
-      weight: 19,
-      type: ['fire'],
-      category: 'flame'
-    }
-  ];
+  // pokemonList = [
+  //   {
+  //     name: 'Bulbasaur',
+  //     height: 0.7,
+  //     weight: 6.9,
+  //     type: ['grass', 'poison'],
+  //     category: 'seed'
+  //   },
+  //   {
+  //     name: 'Ivysaur',
+  //     height: 1,
+  //     weight: 13,
+  //     type: ['grass', 'poison'],
+  //     category: 'seed'
+  //   },
+  //   {
+  //     name: 'Venusaur',
+  //     height: 2,
+  //     weight: 100,
+  //     type: ['grass', 'poison'],
+  //     category: 'seed'
+  //   },
+  //   {
+  //     name: 'Charmander',
+  //     height: 0.6,
+  //     weight: 8.5,
+  //     type: ['fire'],
+  //     category: 'lizard'
+  //   },
+  //   {
+  //     name: 'Charmeleon',
+  //     height: 1.1,
+  //     weight: 19,
+  //     type: ['fire'],
+  //     category: 'flame'
+  //   }
+  // ];
+
+  function loadList() {
+    return fetch(apiUrl).then(function (response) {
+      return response.json();
+    }).then(function (json) {
+      json.results.forEach(function (item) {
+        let pokemon = {
+          name: item.name,
+          detailsUrl: item.url
+        };
+        add(pokemon);
+      });
+    }).catch(function (e) {
+      console.error(e);
+    })
+  }
+
+  function loadDetails(item) {
+    let url = item.detailsUrl;
+    return fetch(url).then(function (response) {
+      return response.json();
+    }).then(function (details) {
+      // Now we add the details to the item
+      item.imageUrl = details.sprites.front_default;
+      item.height = details.height;
+      item.types = details.types;
+    }).catch(function (e) {
+      console.error(e);
+    });
+  }
 
   //Adds a new Pokemon if it's an Object and has all required keys
   function add(pokemon) {
@@ -83,7 +114,10 @@ let pokemonRepository = (function () {
 
   //Shows Pokemon details
   function showDetails(pokemon) {
-    console.log(pokemon.name);
+    loadDetails(pokemon).then(function () {
+      console.log(pokemon.name);
+    });
+    //console.log(pokemon.name);
   }
 
   //Gets all stored Pokemons
@@ -100,12 +134,21 @@ let pokemonRepository = (function () {
     add: add,
     addListItem: addListItem,
     getAll: getAll,
-    getPokemonByName: getPokemonByName
+    getPokemonByName: getPokemonByName,
+    loadList: loadList,
+    loadDetails: loadDetails
   };
 })();
 
 // Loop through the pokemonList and 
 // create Pokemon buttons on the page
-pokemonRepository.getAll().forEach(function (pokemon) {
-  pokemonRepository.addListItem(pokemon);
+// pokemonRepository.getAll().forEach(function (pokemon) {
+//   pokemonRepository.addListItem(pokemon);
+// });
+
+pokemonRepository.loadList().then(function() {
+  // Now the data is loaded!
+  pokemonRepository.getAll().forEach(function(pokemon){
+    pokemonRepository.addListItem(pokemon);
+  });
 });
