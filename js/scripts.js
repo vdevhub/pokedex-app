@@ -7,9 +7,11 @@ let pokemonRepository = (function () {
   let apiUrl = 'https://pokeapi.co/api/v2/pokemon/?limit=150';
 
   function loadList() {
+    showLoadingMessage();
     return fetch(apiUrl).then(function (response) {
       return response.json();
     }).then(function (json) {
+      hideLoadingMessage();
       json.results.forEach(function (item) {
         let pokemon = {
           name: item.name,
@@ -19,21 +21,42 @@ let pokemonRepository = (function () {
       });
     }).catch(function (e) {
       console.error(e);
+      hideLoadingMessage();
     })
   }
 
   function loadDetails(item) {
+    showLoadingMessage();
     let url = item.detailsUrl;
     return fetch(url).then(function (response) {
       return response.json();
     }).then(function (details) {
+      hideLoadingMessage();
       // Now we add the details to the item
       item.imageUrl = details.sprites.front_default;
       item.height = details.height;
       item.types = details.types;
     }).catch(function (e) {
       console.error(e);
+      hideLoadingMessage();
     });
+  }
+
+  //Shows loading message on the page
+  function showLoadingMessage() {
+    let messageBlock = document.querySelector('.loading-status');
+    let message = document.createElement('p');
+    message.classList.add('status-message');
+    message.innerText = 'Loading ...';
+    messageBlock.append(message);
+    //messageElement.classList.toggle('is-hidden');
+  }
+
+  //Hides loading message from the page
+  function hideLoadingMessage() {
+    let message = document.querySelector('.status-message');
+    message.parentElement.removeChild(message);
+    //messageElement.classList.toggle('is-hidden');
   }
 
   //Adds a new Pokemon if it's an Object and has all required keys
