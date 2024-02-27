@@ -122,12 +122,6 @@ let pokemonRepository = (function () {
   };
 })();
 
-// Loop through the pokemonList and 
-// create Pokemon buttons on the page
-// pokemonRepository.getAll().forEach(function (pokemon) {
-//   pokemonRepository.addListItem(pokemon);
-// });
-
 pokemonRepository.loadList().then(function() {
   // Now the data is loaded!
   pokemonRepository.getAll().forEach(function(pokemon){
