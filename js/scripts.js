@@ -82,6 +82,7 @@ let pokemonRepository = (function () {
     let pokemonButton = document.createElement('button');
     pokemonButton.innerText = pokemon.name;
     pokemonButton.classList.add('pokemon-button');
+    pokemonButton.classList.add('box-shadow');
 
     pokemonListItem.appendChild(pokemonButton);
     pokemonList.appendChild(pokemonListItem);
