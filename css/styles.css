@@ -237,9 +237,9 @@ Modal Pokemon card styling
   display: inline-block;
   box-sizing: border-box;
   background: #fff;
-  padding: 15px;
+  padding: 20px;
   width: 100%;
-  max-width: 700px;
+  max-width: 600px;
   text-align: left;
 }
 

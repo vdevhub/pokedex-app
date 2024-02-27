@@ -80,7 +80,7 @@ let pokemonRepository = (function () {
     let pokemonListItem = document.createElement('li');
 
     let pokemonButton = document.createElement('button');
-    pokemonButton.innerText = pokemon.name;
+    pokemonButton.innerText = pokemon.name.toUpperCase();
     pokemonButton.classList.add('pokemon-button');
     pokemonButton.classList.add('box-shadow');
 
@@ -99,14 +99,12 @@ let pokemonRepository = (function () {
   function showDetails(pokemon) {
     loadDetails(pokemon).then(function () {
       console.log(pokemon);
-      showModal(pokemon.name, pokemon.height)
+      showModal(pokemon.name.toUpperCase(), pokemon.imageUrl, 'Height: ' + pokemon.height)
     });
   }
 
-
-
   //Shows the modal for Pokemon
-  function showModal(title, text) {
+  function showModal(title, url, text) {
     let modalContainer = document.querySelector('#pokemon-modal-container');
 
     modalContainer.innerHTML = '';
@@ -122,11 +120,15 @@ let pokemonRepository = (function () {
     let titleElement = document.createElement('h1');
     titleElement.innerText = title;
 
+    let imgElement = document.createElement('img');
+    imgElement.src = url;
+
     let contentElement = document.createElement('p');
     contentElement.innerText = text;
 
     modal.appendChild(closeButtonElement);
     modal.appendChild(titleElement);
+    modal.appendChild(imgElement);
     modal.appendChild(contentElement);
     modalContainer.appendChild(modal);
 
