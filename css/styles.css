@@ -211,6 +211,10 @@ Responsive design rules.
 Modal Pokemon card styling
 */
 
+#pokemon-modal-container {
+  display: none;
+}
+
 #pokemon-modal-container.is-visible {
   position: fixed;
   padding: 20px;
