@@ -236,19 +236,22 @@ Modal Pokemon card styling
   margin: auto;
   display: inline-block;
   box-sizing: border-box;
-  background: #fff;
-  padding: 20px;
+  background: linear-gradient(151deg, rgba(103, 111, 157, 1) 10%, rgba(66, 71, 105, 1) 49%, rgba(45, 50, 80, 1) 97%);
+  color: #fff;
+  padding: 40px;
   width: 100%;
-  max-width: 600px;
+  max-width: 450px;
   text-align: left;
+  border-radius: 15px;
 }
 
 .pokemon-modal-close {
   float: right;
   -webkit-appearance: none;
   border: 0;
+  padding: 0;
   background: none;
-  color: #777;
+  color: #fff;
   text-decoration: underline;
 }
 
