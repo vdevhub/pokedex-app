@@ -49,14 +49,12 @@ let pokemonRepository = (function () {
     message.classList.add('status-message');
     message.innerText = 'Loading ...';
     messageBlock.append(message);
-    //messageElement.classList.toggle('is-hidden');
   }
 
   //Hides loading message from the page
   function hideLoadingMessage() {
     let message = document.querySelector('.status-message');
     message.parentElement.removeChild(message);
-    //messageElement.classList.toggle('is-hidden');
   }
 
   //Adds a new Pokemon if it's an Object and has all required keys
