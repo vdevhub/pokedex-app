@@ -111,7 +111,7 @@ Page header styling, flexbox.
 .page-header {
   display: flex;
   width: 100%;
-  padding: 20px 60px;
+  padding: 20px 20%;
   margin-bottom: 60px;
   background-color: #2d3250;
   position: fixed;
