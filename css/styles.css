@@ -160,9 +160,14 @@ Pokemon list styling.
   padding: 20px 0;
 }
 
+.pokemon-list li{
+  display: inline-block;
+}
+
 .pokemon-button {
-  width: 300px;
-  margin-bottom: 10px;
+  width: 200px;
+  height: 300px;
+  margin: 10px;
   transition: transform 0.2s ease;
 }
 
