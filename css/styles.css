@@ -197,7 +197,12 @@ Responsive design rules.
     font-size: 18px;
   }
 
+  .pokemon-list li {
+    display: block;
+  }
+
   .pokemon-button {
-    width: 80%;
+    width: 70%;
+    height: 200px;
   }
 }
