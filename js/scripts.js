@@ -100,7 +100,6 @@ let pokemonRepository = (function () {
   //Shows Pokemon details
   function showDetails(pokemon) {
     loadDetails(pokemon).then(function () {
-      console.log(pokemon);
       showModal(pokemon.name.toUpperCase(), pokemon.imageUrl, pokemon.height, pokemon.types);
     });
   }
