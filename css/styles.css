@@ -168,6 +168,7 @@ Pokemon list styling.
   width: 200px;
   height: 300px;
   margin: 10px;
+  border-bottom: 10px solid rgba(0, 0, 0, 0.3);
   transition: transform 0.2s ease;
 }
 
