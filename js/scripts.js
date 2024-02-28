@@ -1,11 +1,12 @@
 
-//Initializing the Pokemon list
+//Prepares the Pokemon list
 //Wrapped in IIFE with exposed functions
 let pokemonRepository = (function () {
   let pokemonList = [];
   let expectedKeys = ['name', 'detailsUrl'];
   let apiUrl = 'https://pokeapi.co/api/v2/pokemon/?limit=150';
 
+  //Loads Pokemons from an external API adn store in the repository
   function loadList() {
     showLoadingMessage();
     return fetch(apiUrl).then(function (response) {
@@ -25,6 +26,7 @@ let pokemonRepository = (function () {
     })
   }
 
+  //Loads details about a Pokemon from an external API
   function loadDetails(item) {
     showLoadingMessage();
     let url = item.detailsUrl;
@@ -74,7 +76,7 @@ let pokemonRepository = (function () {
     }
   }
 
-  //Adds a Pokemon as a list item (button) in the page
+  //Adds a Pokemon as a button in the page
   function addListItem(pokemon) {
     let pokemonList = document.querySelector('.pokemon-list');
     let pokemonListItem = document.createElement('li');
@@ -90,7 +92,7 @@ let pokemonRepository = (function () {
     addButtonListener(pokemonButton, pokemon);
   }
 
-  //Adds an Event Listener in a button
+  //Adds an Event Listener in a Pokemon button
   function addButtonListener(button, pokemon) {
     button.addEventListener('click', function () {showDetails(pokemon)});
   }
@@ -134,6 +136,7 @@ let pokemonRepository = (function () {
 
     modalContainer.classList.add('is-visible');
 
+    //Hides the Pokemon modal if clicked outside the modal
     modalContainer.addEventListener('click', (e) => {
       // Since this is also triggered when clicking INSIDE the modal
       // We only want to close if the user clicks directly on the overlay
@@ -144,22 +147,19 @@ let pokemonRepository = (function () {
     })
   }
 
+  //Hides the Pokemon modal container
   function hideModal() {
     let modalContainer = document.querySelector('#pokemon-modal-container');
     modalContainer.classList.remove('is-visible');
   }
 
+  //Hides the Pokemon modal container when clicked ESC
   window.addEventListener('keydown', (e) => {
     let modalContainer = document.querySelector('#pokemon-modal-container');
     if (e.key === 'Escape' && modalContainer.classList.contains('is-visible')) {
       hideModal();
     }
   });
-
-
-
-
-
 
   //Gets all stored Pokemons
   function getAll() {
@@ -181,6 +181,7 @@ let pokemonRepository = (function () {
   };
 })();
 
+//Loads all Pokemons when the page is opened
 pokemonRepository.loadList().then(function() {
   // Now the data is loaded!
   pokemonRepository.getAll().forEach(function(pokemon){
