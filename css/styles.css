@@ -253,7 +253,7 @@ Modal Pokemon card styling
 .pokemon-modal-close {
   float: right;
   border: 0;
-  padding: 0;
+  padding: 10px;
   background: none;
   color: #fff;
   text-decoration: underline;
