@@ -80,9 +80,13 @@ let pokemonRepository = (function () {
   function addListItem(pokemon) {
     let pokemonList = document.querySelector('.pokemon-list');
     let pokemonListItem = document.createElement('li');
+    pokemonListItem.classList.add('list-group-item');
 
     let pokemonButton = document.createElement('button');
     pokemonButton.innerText = pokemon.name.toUpperCase();
+    pokemonButton.setAttribute('type', 'button');
+    pokemonButton.classList.add('btn');
+    pokemonButton.classList.add('btn-dark');
     pokemonButton.classList.add('pokemon-button');
     pokemonButton.classList.add('box-shadow');
 
