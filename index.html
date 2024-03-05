@@ -10,25 +10,29 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Expletus+Sans:ital,wght@0,400..700;1,400..700&family=Inter:wght@100..900&display=swap" rel="stylesheet">
-  <link rel="stylesheet" type="text/css" href="css/styles.css">
+  <!-- <link rel="stylesheet" type="text/css" href="css/styles.css"> -->
 </head>
 
 <body>
-  <header class="page-header box-shadow">
-    <a class="page-header__item" href="index.html">
-      <img class="page-header__item-logo" src="img/pokedex-logo.svg" alt="Pokedex Logo">
+  <nav class="navbar navbar-expand-md navbar-dark bg-dark">
+    <a class="navbar-brand" href="index.html">
+      <img class="img-fluid" src="img/pokedex-logo.svg" alt="Pokedex Logo">
     </a>
-    <nav class="page-header__item">
-      <ul role="menubar" class="navigation-list">
-        <li role="presentation">
-          <a href="index.html" role="menuitem" class="navigation-list__item navigation-list__item--active">Home</a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarNav">
+      <ul role="menubar" class="navbar-nav">
+        <li role="presentation" class="nav-item active">
+          <a href="index.html" role="menuitem" class="nav-link">Home <span class="sr-only">(current)</span></a>
         </li>
-        <li role="presentation">
-          <a aria-label="about-pokedex-app" href="about.html" role="menuitem" class="navigation-list__item">About</a>
+        <li role="presentation" class="nav-item">
+          <a aria-label="about-pokedex-app" href="about.html" role="menuitem" class="nav-link">About</a>
         </li>
       </ul>
-    </nav>
-  </header>
+    </div>
+  </nav>
+  
   <main>
       <h1>POKÉDEX</h1>
       <p>Search bar comes here</p>
