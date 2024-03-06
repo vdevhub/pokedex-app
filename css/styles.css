@@ -60,25 +60,17 @@ h3 {
 /*
 Link and link states styling.
 */
-a {
-  color: #ffc438;
-  transition: opacity 0.4s;
+.navbar-dark .navbar-nav .nav-link {
+  color:#fff;
 }
 
-a:visited {
-  color: #fff;
+.navbar-dark .navbar-nav .active>.nav-link,
+.navbar-dark .navbar-nav .nav-link.active,
+.navbar-dark .navbar-nav .nav-link.show,
+.navbar-dark .navbar-nav .show>.nav-link {
+  color: #ffc438
 }
 
-a:hover,
-a:focus {
-  text-decoration: none;
-  cursor: pointer;
-  opacity: 0.8;
-}
-
-a:active {
-  color: #f9b17a;
-}
 
 /*
 Page header styling, flexbox.
