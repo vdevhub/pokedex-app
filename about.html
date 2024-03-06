@@ -10,28 +10,31 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Expletus+Sans:ital,wght@0,400..700;1,400..700&family=Inter:wght@100..900&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.3.1/dist/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
-  <!-- <link rel="stylesheet" type="text/css" href="css/styles.css"> -->
+  <link rel="stylesheet" type="text/css" href="css/styles.css">
 </head>
 
 <body>
-  <nav class="navbar navbar-expand-md navbar-dark bg-dark">
-    <a class="navbar-brand" href="index.html">
-      <img class="img-fluid" src="img/pokedex-logo.svg" alt="Pokedex Logo">
-    </a>
-    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-      <span class="navbar-toggler-icon"></span>
-    </button>
-    <div class="collapse navbar-collapse" id="navbarNav">
-      <ul role="menubar" class="navbar-nav">
-        <li role="presentation" class="nav-item">
-          <a href="index.html" role="menuitem" class="nav-link">Home</a>
-        </li>
-        <li role="presentation" class="nav-item active">
-          <a aria-label="about-pokedex-app" href="about.html" role="menuitem" class="nav-link">About <span class="sr-only">(current)</span></a>
-        </li>
-      </ul>
-    </div>
-  </nav>
+  <header>
+    <nav class="navbar navbar-expand-md navbar-dark d-flex fixed-top box-shadow page-header">
+      <a class="navbar-brand" href="index.html">
+        <img class="img-fluid" src="img/pokedex-logo.svg" alt="Pokedex Logo">
+      </a>
+      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse flex-grow-1" id="navbarNav">
+        <ul role="menubar" class="navbar-nav ml-auto">
+          <li role="presentation" class="nav-item">
+            <a href="index.html" role="menuitem" class="nav-link">Home</a>
+          </li>
+          <li role="presentation" class="nav-item active">
+            <a aria-label="about-pokedex-app" href="about.html" role="menuitem" class="nav-link">About <span class="sr-only">(current)</span></a>
+          </li>
+        </ul>
+      </div>
+    </nav>
+  </header>
+
   <main>
     <div>
       <h1>About</h1>
