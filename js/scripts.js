@@ -85,7 +85,7 @@ let pokemonRepository = (function () {
     let pokemonButton = document.createElement('button');
     pokemonButton.innerText = pokemon.name.toUpperCase();
     pokemonButton.setAttribute('type', 'button');
-    pokemonButton.classList.add('btn', 'btn-dark');
+    pokemonButton.classList.add('btn', 'btn-dark', 'pokemon-button', 'box-shadow');
     pokemonButton.setAttribute('data-toggle', 'modal');
     pokemonButton.setAttribute('data-target', '#pokemonModalContainer');
 
