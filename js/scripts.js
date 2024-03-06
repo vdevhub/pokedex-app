@@ -78,14 +78,14 @@ let pokemonRepository = (function () {
 
   //Adds a Pokemon as a button in the page
   function addListItem(pokemon) {
-    let pokemonList = document.querySelector('.pokemon-list');
+    let pokemonList = document.querySelector('.list-group');
     let pokemonListItem = document.createElement('li');
     pokemonListItem.classList.add('list-group-item');
 
     let pokemonButton = document.createElement('button');
     pokemonButton.innerText = pokemon.name.toUpperCase();
     pokemonButton.setAttribute('type', 'button');
-    pokemonButton.classList.add('btn', 'btn-dark', 'pokemon-button', 'box-shadow');
+    pokemonButton.classList.add('btn', 'btn-dark');
     pokemonButton.setAttribute('data-toggle', 'modal');
     pokemonButton.setAttribute('data-target', '#pokemonModalContainer');
 
