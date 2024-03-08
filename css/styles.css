@@ -61,7 +61,7 @@ h3 {
 Link and link states styling.
 */
 .navbar-dark .navbar-nav .nav-link {
-  color:#fff;
+  color: #fff;
 }
 
 .navbar-dark .navbar-nav .active>.nav-link,

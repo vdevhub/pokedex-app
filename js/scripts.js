@@ -61,7 +61,7 @@ let pokemonRepository = (function () {
 
   //Adds a new Pokemon if it's an Object and has all required keys
   function add(pokemon) {
-    if (typeof(pokemon) === 'object'){
+    if (typeof (pokemon) === 'object') {
       let keysToAdd = Object.keys(pokemon);
       let areKeysCorrect = JSON.stringify(expectedKeys.sort()) === JSON.stringify(keysToAdd.sort());
       if (areKeysCorrect) {
@@ -97,7 +97,7 @@ let pokemonRepository = (function () {
 
   //Adds an Event Listener in a Pokemon button
   function addButtonListener(button, pokemon) {
-    button.addEventListener('click', function () {showDetails(pokemon)});
+    button.addEventListener('click', function () { showDetails(pokemon) });
   }
 
   //Shows Pokemon details
@@ -162,9 +162,9 @@ let pokemonRepository = (function () {
 })();
 
 //Loads all Pokemons when the page is opened
-pokemonRepository.loadList().then(function() {
+pokemonRepository.loadList().then(function () {
   // Now the data is loaded!
-  pokemonRepository.getAll().forEach(function(pokemon){
+  pokemonRepository.getAll().forEach(function (pokemon) {
     pokemonRepository.addListItem(pokemon);
   });
 });
