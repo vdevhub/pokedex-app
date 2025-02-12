@@ -7,6 +7,22 @@
 
 ![PokedexMain](https://github.com/user-attachments/assets/0a7f67d4-175f-425d-938b-5d2f70467579)
 
+## Technologies
+- HTML
+- CSS
+- JavaScript
+- Bootstrap
+- Prettier
+- ESLint
+  
+## Methodologies
+- AJAX
+- Promises
+- Implementing external API with fetch
+- Asynchronous code
+- UI patterns
+- DOM interaction
+
 ## GitHub Pages
 - Check out the live app on [GitHub.io](https://vdevhub.github.io/pokedex-app/)!
 
